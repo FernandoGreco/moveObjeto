@@ -4,8 +4,11 @@ function getPlace(e) {
     var y = e.clientY;
     //pega o id da div
     var id = e.toElement.id;
+
     var width = screen.width - 200;
-    var height = screen.height - 200;     
+    var height = screen.height - 200; 
+    
+
     
     console.log("Largura: "+width+" Altura"+height);
 
@@ -37,10 +40,10 @@ function getPlace(e) {
       var marginT = Math.floor(Math.random() * height)+"px";
       
 
-      //adiciona 15 pixel ao margin left do objeto  
+      //adiciona margin left aleatório ao objeto  
       objeto.style.marginLeft = marginL;
 
-      //adiciona 15 pixel ao margin left do objeto  
+      //adiciona margin top  aleatório ao objeto  
       objeto.style.marginTop = marginT;
       
       
