@@ -8,9 +8,9 @@ function getPlace(e) {
     var width = screen.width - 200;
     var height = screen.height - 200; 
     
-    if(width < 400){
-        width+300;
-        height+300;
+    if(width < 600){
+        width = width +600;
+        height = height +600;
     }
   
 
