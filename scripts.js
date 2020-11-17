@@ -8,8 +8,12 @@ function getPlace(e) {
     var width = screen.width - 200;
     var height = screen.height - 200; 
     
+    if(width < 400){
+        width+300;
+        height+300;
+    }
+  
 
-    
     console.log("Largura: "+width+" Altura"+height);
 
     //var coor = "Coordinates: (" + x + "," + y + ")";
