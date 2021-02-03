@@ -1,5 +1,6 @@
 
 var cont = 0;
+var maior = 0;
 function getPlace(e) {
    // document.getElementById("contador").innerHTML = "";  
 
@@ -19,7 +20,7 @@ function getPlace(e) {
     }
   
 
-    console.log("Largura: "+width+" Altura"+height);
+   // console.log("Largura: "+width+" Altura"+height);
 
    
     //var coor = "Coordinates: (" + x + "," + y + ")";
@@ -31,18 +32,6 @@ function getPlace(e) {
 
       var objeto = document.getElementById("objeto");  
 
-
-      //essa parte será util se o objeto for se distanciando da seta "aos poucos"
-      //pega os valores do style | get all values of style
-      //var style = getComputedStyle(objeto);
-      //pega o lado esquedo | get the left side
-      //var marginL = parseInt(style.marginLeft.match(/(\d+)/)[0]);
-      //marginL = marginL+15+"px";
-
-      
-      //pega o lado direto | get the top side
-      //var marginT = parseInt(style.marginTop.match(/(\d+)/)[0]);
-      //marginT = marginT+15+"px";
 
        //gera um posição aleatória na tela
        var marginL = Math.floor(Math.random() * width)+"px";
@@ -63,17 +52,34 @@ function getPlace(e) {
 }
 
 setInterval(function(){ 
-//	alert ("contatdor "+cont);
-let reflexo;
-let maior=cont;
 
-if(cont>reflexo){  
-    maior=cont;
-}
+    
+    var contador = document.getElementById("contador");    
+    var recorde = document.getElementById("maior");
 
-reflexo = cont;
-document.getElementById("contador").innerHTML = "Seu reflexo foi "+reflexo + " em 10 segundos";  
+    var txtAtual = contador.innerHTML;
+
+    txtAtual = txtAtual.slice(15,17);
+
+    //verifica se está na primeira interação, ou seja se não têm nenhum valor no campo com id contador
+    if(txtAtual == ''){
+        maior = cont;
+    //adiciona sempre o maior valor a variável maior    
+    }else if (maior < cont){
+        maior = cont;
+     }
+
+    console.log("maior"+ maior);
+   // console.log("vai lixo"+txtAtual+typeof(txtAtual));
+  
+    //insere o valor atual que o mouse ficou sobre o quadrado 
+    contador.innerHTML = "Seu reflexo atual "+cont + " em 10 segundos";
     cont = 0;
+
+    //insere o valor mais alto de acertos
+    recorde.innerHTML = "Recorde: "+maior;
+    
+
  //   document.location.reload(true);
      }, 10000);
  

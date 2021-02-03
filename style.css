@@ -8,12 +8,17 @@
     width: 100%;
   }
 
-  .contador{
+  .contador,.maior{
     color: white;
     font-size: 30px;
     position: absolute;
     z-index: 1;
     padding: 20px;
+  }
+
+  .maior{
+    margin-top: 29px;
+    color: yellow;
   }
 
   .height-100 {
@@ -46,7 +51,12 @@
     }
 
     
-  .contador{
+  .maior{
+    margin-top: 20px;
+  }
+
+    
+  .contador,.maior{
     font-size: 20px;
   }
   }
